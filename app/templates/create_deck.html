@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Crear Mazo{% endblock %}
+
+{% block content %}
+<h1>Crear Mazo</h1>
+<form method="post">
+    <label for="name">Nombre del Mazo:</label>
+    <input type="text" id="name" name="name" required>
+    <button type="submit">Crear</button>
+</form>
+{% endblock %}

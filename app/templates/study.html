@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Estudiar{% endblock %}
+
+{% block content %}
+<h1>Estudiar {{ deck.name }}</h1>
+<ul>
+    {% for card in cards %}
+    <li>
+        <strong>Pregunta:</strong> {{ card.question }}<br>
+        <strong>Respuesta:</strong> {{ card.answer }}<br>
+        <strong>Pista:</strong> {{ card.hint }}<br>
+        <form method="post">
+            <input type="hidden" name="card_id" value="{{ card.id }}">
+            <label>¿Respondida Correctamente?</label>
+            <button type="submit" name="correct" value="true">Sí</button>
+            <button type="submit" name="correct" value="false">No</button>
+        </form>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

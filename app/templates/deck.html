@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}Deck{% endblock %}
+
+{% block content %}
+    <h2>{{ deck.name }}</h2>
+    <ul>
+        {% for card in cards %}
+            <li>{{ card.front }} - {{ card.back }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('views.study_deck', deck_id=deck.id) }}">Study this deck</a>
+{% endblock %}

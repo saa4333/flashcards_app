@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h1>Welcome, {{ current_user.first_name }}</h1>
+    <ul>
+        {% for deck in decks %}
+            <li><a href="{{ url_for('views.view_deck', deck_id=deck.id) }}">{{ deck.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

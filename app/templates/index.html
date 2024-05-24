@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+<h1>Bienvenido a Lernsoftware</h1>
+<p>Seleccione un mazo para comenzar a estudiar:</p>
+<ul>
+    {% for deck in decks %}
+    <li><a href="{{ url_for('main.study', deck_id=deck.id) }}">{{ deck.name }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
